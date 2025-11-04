@@ -12,6 +12,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 COPY . .
 
+RUN python -m pip install --upgrade pip setuptools wheel
+
+RUN python -m pip install pyarrow --no-cache-dir
+
 RUN pip install --no-cache-dir -e .
 
 RUN python pipeline/training_pipeline.python
