@@ -34,7 +34,7 @@ pipeline{
       steps{
         withCredentials([file(credentialsId : 'gcp-key', variable : 'GOOGLE_APPLICATION_CREDENTIALS'){
           script(
-            echo'Building and Pushing Docker Image to GCR.......'
+            echo 'Building and Pushing Docker Image to GCR.......'
             sh'''
             EXPORT PATH=$PATH:$(GCLOUD_PATH)
 
