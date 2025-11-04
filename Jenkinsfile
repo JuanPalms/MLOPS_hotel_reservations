@@ -35,7 +35,7 @@ pipeline{
         withCredentials([file(credentialsId : 'gcp-key', variable : 'GOOGLE_APPLICATION_CREDENTIALS'){
           script(
             echo 'Building and Pushing Docker Image to GCR.......'
-            sh'''
+            sh '''
             EXPORT PATH=$PATH:$(GCLOUD_PATH)
 
             gcloud auth activate-service-account --key-file=$GOOGLE_APPLICATION_CREDENTIALS
